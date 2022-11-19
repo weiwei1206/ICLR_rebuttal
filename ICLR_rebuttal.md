@@ -108,22 +108,11 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 
 
-<!-- > **Point4**: The paper cites [1], although it does not seem to take any lessons from the work ... applying non-linearities and transformation matrices to non-feature-based ... to apply to...
-
-* LightGCN is a very famous work in the recommendation system research line. We have also done relevant experiments to hope to use the lightweight GNN architecture. However, the results of the experiment support us to use the current implementation method in the model framework.
-* * LightGCN is a very well-known work in recommender systems. We have also done related experiments hoping to use a lightweight GNN architecture. However, the results of the experiments support us to use the current implementation in the model framework. <font size="1" color=red>(TODO:.)</font> 
-
 
 
 > **Point5**: ... sampled ... despite previous work [2] ... misleading...chose this evaluation..
  -->
 
-
-> **Point6**: The "In-Depth Analysis of ECGM Model" ... only a paragraph, and the ... not adequately described... interesting, informative, or in depth.
-
-## Response about "In-Depth Analysis of ECGM Model".
-
-* This section shows the experimental results explained in some classes and partially corresponds to the results of the theoretical analysis in the supplementary material.
 
 
 
