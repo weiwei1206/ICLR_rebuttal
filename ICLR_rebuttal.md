@@ -130,30 +130,9 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 # Reviewer3:
 
-> **Point1**: "The ... limited. ... simple applications/extensions of existing methods.."
+It should be highlighted that we are incredibly appreciative to the reviewers for thoroughly reading our article, offering helpful suggestions, and identifying specific sections that needed to be revised. After accepting the comments from the reviewers and thinking carefully about our shortcomings, we revised the article. For some of the required responses, part of them have been stated in the responses of the previous reviewers, and the other part will be explained as follows:
 
-## Response to the differences from previous work.
 
-First of all, we appreciate reviewer for raising relevant doubts and please allow us to give an explanation:
-* Our module does apply classical models and paradigms, which contribute to better experimental results. However, we are considering how to model long- and short-term multi-behavior paradigms in user-item interactions with rare validated classical milestone models <font size="1">(e.g., Diffusion Model, GNN, Contrastive and Transformer)</font>.
-
-* Each module of our model is designed for scenario-specific data; they are not simple applications of the milestone model. We did many substitution experiments during the design process and used the version that made the best results in the end. In addition, we performed theoretical support
-<font size="1" color=red>(e.g.,TODO: contrast learning for multi-view mutual information maximization and increased instance differentiation by increasing the gradient.)</font> for some modules and obtained experimental results that echoed the theory(<font size="1" color=red>(TODO:.)</font>).
-
-* Allow us to present the advantages of our modules over the milestone model:
-    * Transformer：
-        * We do not use transformer in the model, but we introduce self-attention to model the relationship of multiple behaviors between time slot t and t-1. 
-        * Probably because the writing confused the reviewer, we have rewritten this part of the article<font size="1" color=red>(TODO:.)</font>. Specifically, we simplified the formula and used easy-follow notation. 
-        * To illustrate that our self-attention is used to model the relationship between each user's behavior rather than the tranfomer component, we have added the process of tensor dimension transformation table<font size="1" color=red>(TODO:.)</font> and expanded the description<font size="1" color=red>(TODO:.)</font> of the self-attention weight visualization experiment to the supplementary material.
-    * Contrastive：
-        * Our contrastive module models the commonality and diversity of user preference. And we provide theoretical support<font size="1" color=red>(TODO:.)</font> and experimental validation<font size="1" color=red>(TODO:.)</font> for "commonality" and "diversity" respectively. What's more, it is worth noting that, some experimental results with parameters not in the reasonable range are the extreme cases of the theoretical analysis.
-        * Commonality: We believe that there are user common preferences among multiple behaviors. By performing mutual information maximization across behaviors, more accurate and robust user representations can be obtained. The theoretical analysis section also states that minimizing our multibehavioral cl loss is approximately a lower bound for maximizing multibehavioral mutual information. In addition, the theoretical analysis section provides us with a theoretical analysis for multi-view contrastive learning.
-        * Diversity: The modeling of short-term user-item interactions is based on GNN, which helps to model higher-order connectivity[]. However, the multilayer GNN architecture introduces over-smoothing problems[]. The theoretical analysis part points out that the cl loss gives a larger gradient to the difficult negative samples, which means push away similar user representations, i.e., mitigating the over-soomthing problem. And, very interestingly, our experiments also corroborate with the theoretical analysis. That is, a small temperature coefficient does give a larger gradient, but too large may lead to a gradient explosion. We publish the code, data set, and parameters of the model (e.g., a Tmall temperature coefficient of 0.037 is optimal, but a loss of "NaN" occurs at 0.02 because of gradient explosion).
-    * GNN: Our GNN has the following advantages as a short-term multi-behavior encoder.
-        * The main point is that GNN is divided into time slots, and there is a part that passes information between time slots. And our self-attention is specifically used to model the multi-relationship between time slots.
-        * GNN's initialization module 3.1.5 takes over the information from the previous time-slot.
-        * Encodes heterogeneity for multi-behavior.
-        * Encodes the information of short-term.
 
 
 > **Point2**: "The proposed model is too complex...writing is not quite clear... difficult to follow."
