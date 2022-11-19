@@ -73,32 +73,35 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 
     
+## Point3: Details and Description of Sec.4.4 and Experiments.
 
-> **Point3**: The ablation studies ... extremely limited, ... to justify the design decisions ... without ... test the model's ability to ... tautologically explain the observed performance improvements ... lack of rigorous experimental design to validate ... provides a solid foundation...
+**Response**: For the modules designed in the EGCM framework, in addition to the main experiments(*Tab.2*) that can illustrate the overall results, the ablation experiments(*Tab.3*), parameter experiment(*Fig.2(e)*), the visualization experiments of weights(*Fig.2(f)*) and embedding(*Fig.2(a)-(d)*) can verify the validity of the corresponding modules. Moreover, we add experiments on ablation behavior(Appendix.A.8) to illustrate the contribution of behavioral information to the results. In the following, we describe each module in detail.
 
-
-## ## Point3: Details and Description of Sec.4.4 and Experiments.
 
 * Ablation experiments and EGCM modules：
     * Ablation experiments can demonstrate the effectiveness of the main modules of our model：
-        * w/o-CL: The result of remove contrastive based on w/o-JBL. And it can be seen that especially on Tmall and IJCAI, contrastive learning contributes a lot to the results. The reason may be that these two datasets have more behavioral data and the overlap of individual behavioral timestamps is high.
+        * w/o-CL: The result of remove contrastive based on w/o-JBL. And it can be seen that especially on Tmall and IJCAI, contrastive learning contributes a lot to the results. The reason may be that these two datasets have more behavioral data and larger overlap of timestamps.
         * r/w-GRU: The result that to remove the self-attention based memory module and model the sequential relationship between time-slots with GRU as a replacement.
         * w/o-MBG: The result of remove the short-term multi-behavior graph encoder based on w/o-JBL.
-    * The main contributions to the superior results of our EGCM are the introducing of behavior-aware graph neural encoder(w/o-MBG), the use of multi-behavior data(w/o-JBL, we supplemented the multi-behavioral ablation experiment and added it to the <font size="1" color=red>(TODO:.)</font> of supplementary material) and contrastive learning(w/o-CL).
+    * The main contributions to the superior results of our EGCM are the introducing of behavior-aware graph neural encoder(w/o-MBG), the use of multi-behavior data(w/o-JBL, the supplemented the multi-behavioral ablation experiment(*Appendix.A.8*) and contrastive learning(w/o-CL).
 * Weights visualization and EGCM modules： 
-    * We have added the details of this module in <font size="1" color=red>(TODO:.)</font> of the supplementary material. The following is a brief description of this experiment.
+    * We have added the details of this module(*Appendix.A.9.2*). The following is a brief description of this experiment.
     * We visualized the learned self-attention weight matrices $\Phi$ in Eq.4. Each weight matrix $\phi_{b,b'} \in \mathbb{R}^{|\mathcal{B}| \times |\mathcal{B}|}$ in $\Phi$ represents the relationship between the behaviors of a user. For example, for the Tmall dataset there are four behaviors *PageView, Favorite, Cart, Purchase*, therefore, $\phi \in \mathbb{R}^{4 \times 4}$, And, from the visualization results, it can be seen that the higher the number of interactions, the higher the weight of the behavior.
     * The results of the experiment can show that our dynamic cross-relational memory network learns the semantic content of the data.
 * Embedding visualization and EGCM modules：
-    * We have added the details of this module in <font size="1" color=red>(TODO:.)</font> of the supplementary material. The following is a brief description of this experiment.
+    * We have added the details of this module(Appendix.A.9.1) of the supplementary material. The following is a brief description of this experiment.
     * Visualizing behavior-specific embeddings in Fig.4 aims to show the influence of mutual information maximization on representation. Technically, we utilize t-SNE initialized with PCA[1]. And the experiment are conducted on datasets(Tmall, IJCAI) contain four types of behaviors(*page view/click, favorite, cart, purchase*). We can observe that the behaviors of EGCM are closer. In other words, for user $u$, embedding of other behaviors with the same index become closer, while users with different indexes $u\neq u'$ are pulled away.
-    * Ablation Experiments of User Behavior:
+
+* Ablation Experiments of User Behavior: 
+
 
 |         |        Tmall       |                    |                    |                  |   |        IJCAI       |                    |                    |                  |   |  E-commerce  |              |                  |
 |:-------:|:------------------:|:------------------:|:------------------:|:----------------:|---|:------------------:|:------------------:|:------------------:|:----------------:|---|:------------:|:------------:|:----------------:|
 |         | $w/o$-View | $w/o$-Fav. | $w/o$-Cart | Purchase |   | $w/o$-View | $w/o$-Fav. | $w/o$-Cart | Purchase |   | $w/o$-Review | $w/o$-Browse | Purchase |
-|  HR@10  |       0.4625       |       0.5469       |       0.5338       |      0.3696      |   |       0.3546       |       0.4171       |       0.4634       |      0.3046      |   |    0.7323    |    0.7109    |      0.6768      |
-| NDCG@10 |       0.2641       |       0.3265       |       0.3186       |      0.2295      |   |       0.1973       |       0.2341       |       0.2693       |      0.1773      |   |    0.4456    |    0.4412    |      0.4108      |
+|  H@10  |       0.4625       |       0.5469       |       0.5338       |      0.3696      |   |       0.3546       |       0.4171       |       0.4634       |      0.3046      |   |    0.7323    |    0.7109    |      0.6768      |
+| N@10 |       0.2641       |       0.3265       |       0.3186       |      0.2295      |   |       0.1973       |       0.2341       |       0.2693       |      0.1773      |   |    0.4456    |    0.4412    |      0.4108      |
+
+
 
 [1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
 
