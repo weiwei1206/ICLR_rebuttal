@@ -92,6 +92,13 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 * Embedding visualization and EGCM modules：
     * We have added the details of this module in <font size="1" color=red>(TODO:.)</font> of the supplementary material. The following is a brief description of this experiment.
     * Visualizing behavior-specific embeddings in Fig.4 aims to show the influence of mutual information maximization on representation. Technically, we utilize t-SNE initialized with PCA[1]. And the experiment are conducted on datasets(Tmall, IJCAI) contain four types of behaviors(*page view/click, favorite, cart, purchase*). We can observe that the behaviors of EGCM are closer. In other words, for user $u$, embedding of other behaviors with the same index become closer, while users with different indexes $u\neq u'$ are pulled away.
+    * Ablation Experiments of User Behavior:
+
+|         |        Tmall       |                    |                    |                  |   |        IJCAI       |                    |                    |                  |   |  E-commerce  |              |                  |
+|:-------:|:------------------:|:------------------:|:------------------:|:----------------:|---|:------------------:|:------------------:|:------------------:|:----------------:|---|:------------:|:------------:|:----------------:|
+|         | $w/o$-View | $w/o$-Fav. | $w/o$-Cart | Purchase |   | $w/o$-View | $w/o$-Fav. | $w/o$-Cart | Purchase |   | $w/o$-Review | $w/o$-Browse | Purchase |
+|  HR@10  |       0.4625       |       0.5469       |       0.5338       |      0.3696      |   |       0.3546       |       0.4171       |       0.4634       |      0.3046      |   |    0.7323    |    0.7109    |      0.6768      |
+| NDCG@10 |       0.2641       |       0.3265       |       0.3186       |      0.2295      |   |       0.1973       |       0.2341       |       0.2693       |      0.1773      |   |    0.4456    |    0.4412    |      0.4108      |
 
 [1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
 
