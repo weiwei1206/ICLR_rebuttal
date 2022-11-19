@@ -47,12 +47,14 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
 
 # Reviewer2:
 
+Thank you so much for your provided constructive and helpful comments. Please find our detailed response and clarifications below. If our responses resolve your questions, we really genuinely hope your consideration in raising your rating score.
 
-We want to start by expressing our gratitude to the reviewers for spending the time to read the paper thoroughly and point out the problems. We provide the explanations below in answer to several points.
+## Point1: Further clarification of model technical novelty and design motivation.
 
-## Point1: Statement of the Innovation and Motivation of EGCM
+**Response**: At the core of our dynamic multi-behavior recommender system is to effectively model the dynamic interaction heterogeneity and the implicit cross-type behavior dependencies. However, this is not trivial and remain unexplored in existing works due to the following techniques challenges:
 
-**Response**: (We have included the key responses to the EGCM in reviewer1's response "Statement of the Innovation and Motivation of EGCM". We would be grateful if you would take the time to review it, and we would be pleased if we could relieve some of your worries regarding EGCM.)
+* Dynamic interaction heterogeneity of sequential multi-behavior patterns: To tackle this challenge, we design a novel dynamic cross-relational memory network to distill the time-evolving item-item relationships at the fine-grained level of user preferences. In our new dynamic cross-relational memory module, both short-term and long-term multi-behavior intents of users are characterized within the dynamic behavior heterogeneity context, which has not been studied in current works.
+* Jointly modelling of multi-behavior commonality and user preference diversity: To tackle this challenge, we innovatively integrate the contrastive learning with dynamic multi-behavior modelling. We propose a multi-behavior contrastive learning paradigm to supercharge our recommender to preserve multi-behavior commonality and user-specific interest diversity. In particular, we generate our contrastive representation views with the type-specific behavior semantics and the aggregated user multi-behavior embedding. To simultaneously encode user multi-behavior commonality and interests diversity, our EGCM enables the behavior-level contrastive augmentation with positive pairs by pulling the type-specific behavior representation and multi-behavior embedding of the same user. Behavior embeddings of different users are regarded as negative samples are pushed away to capture diverse user behavior-aware preference.
 
 
 
