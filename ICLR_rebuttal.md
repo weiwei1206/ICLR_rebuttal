@@ -132,17 +132,15 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 It should be highlighted that we are incredibly appreciative to the reviewers for thoroughly reading our article, offering helpful suggestions, and identifying specific sections that needed to be revised. After accepting the comments from the reviewers and thinking carefully about our shortcomings, we revised the article. For some of the required responses, part of them have been stated in the responses of the previous reviewers, and the other part will be explained as follows:
 
+## Point: Modifications Made to the Article's "method" Section
+
+**Response**: We spent a lot of effort organizing and updating the "methods" part in response to the second and third comments highlighted by the reviewer in the "Weaknesses" section. We believed that these issues were related to the poor writing in that section.
 
 
 
 > **Point2**: "The proposed model is too complex...writing is not quite clear... difficult to follow."
 
 * First of all, we would like to thank the reviewer for giving us valuable comments. We have carefully considered our shortcomings pointed out by the reviewer and thought that there must be some possible writing problems, so we have revised the method part. We also put some contents that affect the readers' reading in the supplementary materials<font size="1" color=red>(TODO:.)</font>.
-
-
-## Point: Modifications Made to the Article's "method" Section
-
-**Response**: We spent a lot of effort organizing and updating the "methods" part in response to the second and third comments highlighted by the reviewer in the "Weaknesses" section. We believed that these issues were related to the poor writing in that section.
 
 
 
