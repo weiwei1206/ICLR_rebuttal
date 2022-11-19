@@ -66,9 +66,11 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 * Eq.4,5 refer to the dynamic cross-relational memory network(Sec.3.2) to model multiple behavioral relationships across time-slots. The messaging across time slots can be replaced by GRU, i.e. ablation experiments r/w-GRU(Sec.4.3). The results prove the effectiveness of the module we designed.
 * The attention in Eq.5 is still the result after trying sum, mean, concatenate+transformation.
 * InfoNCE[2] in Eq.7 is still the result after multiple attempts. In the denominator, the second term $exp({s( \textbf{e}_{u}^{b}, \textbf{e}_{u'}^{b})/\tau})$ in $\sum$ is because of the better results after adding the negative samples which are in the same view of the anchor node.
+* LightGCN[3] is a very well-known work in recommender systems. We have also done related experiments hoping to use a lightweight GNN architecture. However, the results of the experiments support us to use the current implementation in the model framework. We think that the relevant reason may be the complex relationship of multi-behavior data, and the use of linear layers and activation functions helps to fit.
 
 > [1]Kipf T N, Welling M. Semi-supervised classification with graph convolutional networks[J]. arXiv preprint arXiv:1609.02907, 2016.
 > [2]Oord A, Li Y, Vinyals O. Representation learning with contrastive predictive coding[J]. arXiv preprint arXiv:1807.03748, 2018.
+> > [3]He, Xiangnan, et al. "Lightgcn: Simplifying and powering graph convolution network for recommendation." Proceedings of the 43rd International ACM SIGIR conference on research and development in Information Retrieval. 2020.
 
 
     
