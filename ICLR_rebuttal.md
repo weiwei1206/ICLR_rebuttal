@@ -138,11 +138,6 @@ It should be highlighted that we are incredibly appreciative to the reviewers fo
 
 
 
-> **Point2**: "The proposed model is too complex...writing is not quite clear... difficult to follow."
-
-* First of all, we would like to thank the reviewer for giving us valuable comments. We have carefully considered our shortcomings pointed out by the reviewer and thought that there must be some possible writing problems, so we have revised the method part. We also put some contents that affect the readers' reading in the supplementary materials<font size="1" color=red>(TODO:.)</font>.
-
-
 
 
 
