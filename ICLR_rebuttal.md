@@ -104,6 +104,17 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 * We appreciate the reviewers' thorough analysis. We have taken the insightful criticism and have rewritten(*Sec.4.4*) this module after reading the reviewers' remarks on the "in-depth examination of EGCM model" part. This, in our opinion, is a fascinating section of the article. It shows some visualization(self-attention weights, behavior-specific embedding, influence of $\tau$) results and combines the results with the theoretical analysis in the supplementary material(*Appendix.A.1*).
 
+
+* We appreciate the review's insightful remarks and provided references, which are necessary for our test procedure. In order to address potential issues with the test, we quickly implemented a version of the full-item test (without training data), chose baselines with superior results for comparison, and the experimental outcomes are as follows:
+
+|      |   Tmall  |          |   |   IJCAI  |          |   | E-commerce |          |
+|:----:|:--------:|:--------:|:-:|:--------:|:--------:|:-:|:----------:|:--------:|
+|      |   HR@10  |  NDCG@10 |   |   HR@10  |  NDCG@10 |   |    HR@10   |  NDCG@10 |
+| EHCF | 0.011751 | 0.005270 |   | 0.024629 | 0.012748 |   |  0.135780  | 0.065764 |
+|  CML | 0.013989 | 0.006279 |   | 0.029593 | 0.014911 |   |  0.139536  | 0.067804 |
+| EGCM | 0.015703 | 0.006932 |   | 0.035461 | 0.018640 |   |  0.151299  | 0.075318 |
+
+
 > [1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
 
 
