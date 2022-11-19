@@ -39,6 +39,14 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
 
 
 
+
+
+
+
+
+
+
+
 # Reviewer2:
 
 > **Point1**: The constituent... are known and there is limited ... novelty.
@@ -94,6 +102,17 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
 
 * This section shows the experimental results explained in some classes and partially corresponds to the results of the theoretical analysis in the supplementary material.
 
+
+
+
+
+
+
+
+
+
+
+
 # Reviewer3:
 
 > **Point1**: "The ... limited. ... simple applications/extensions of existing methods.."
@@ -125,6 +144,11 @@ First of all, we appreciate reviewer for raising relevant doubts and please allo
 > **Point2**: "The proposed model is too complex...writing is not quite clear... difficult to follow."
 
 * First of all, we would like to thank the reviewer for giving us valuable comments. We have carefully considered our shortcomings pointed out by the reviewer and thought that there must be some possible writing problems, so we have revised the method part. We also put some contents that affect the readers' reading in the supplementary materials<font size="1" color=red>(TODO:.)</font>.
+
+
+
+
+
 
 
 
