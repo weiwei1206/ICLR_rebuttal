@@ -11,36 +11,30 @@ We are grateful to all the reviewers for their positive feedback and insightful 
 
 # Reviewer1:
 
+## Point1: Statement of the Innovation and Motivation of EGCM
 
-> **Point1**: "Each of the individual piece of EGCM (Multi-relation GNN, Transformer, Contrastive learning) is not new in itself ... in the related works."
+**Response**: First of all, we appreciate the reviewer for raising this question and please allow us to give explanation with the following details. In response to your comments, we have made modification in our revised paper to further clarify the difference and advantage of our newly proposed method over existing techniques.
 
+Each module of our EGCM framework is specially designed to tackle the unique challenge of the multi-behavior sequential recommendation task. While some existing techniques (e.g., graph neural networks, contrastive learning, transformer) are adopted as the backbone or learning paradigm in our method, how to explicitly capture the behavior heterogeneity in a dynamic environment with evolving user preference, requires non-trivial tailored modelling. The difference between our EGCM and existing techniques are elaborated from the following three perspectives:
+* Transformer. Different from leveraging Transformer as the single sequence encoder in most existing Transformer methods, our multi-behavior sequential recommender system involve heterogenous behavior sequences and their implicit cross-behavior dependencies, which cannot be easily handled by existing Transformer solutions. To capture the time-evolving dependencies across different types of behaviors, we design a Transformer-like dynamic memory network(*Sec.3.2*) to take the type-aware behavior embeddings from temporally adjacent time slots as input, and then calculate their correlation weights based on self-attentive scheme. With our new tailored Transformer-based memory network, the dynamic behavior heterogeneity can be well preserved in our encoded time-aware behavior representations.
 
-## Response to the differences from previous work.
+* Contrastive Learning. Following the self-supervised learning (SSL) line, contrastive learning can be considered as a general learning paradigm which generates auxiliary self-supervision signals through instance contrasting. Inspired by the contrastive learning, we design new contrastive learning framework(*Sec.3.3*) to fit the dynamic heterogenous interaction modelling, with the aim of preserving both the multi-behavior commonality and user-specific preference diversity. 
 
-First of all, we appreciate reviewer for raising relevant doubts and please allow us to give an explanation:
-* Our module does apply classical models and paradigms, which contribute to better experimental results. However, we are considering how to model long- and short-term multi-behavior paradigms in user-item interactions with rare validated classical milestone models <font size="1">(e.g., Diffusion Model, GNN, Contrastive and Transformer)</font>.
+    * Commonality(*Theoretical Analysis: Appendix.A.1.1*): We believe that there are user common preferences among multiple behaviors. By performing mutual information maximization across behaviors, more accurate and robust user representations can be obtained. The theoretical analysis section also states that minimizing our multi-behavioral cl loss is approximately a lower bound for maximizing multi-behavioral mutual information(*A.1.1.Eq.14*). In addition, the theoretical analysis section provides us with a theoretical analysis for multi-view contrastive learning(*A.1.1.Eq.15*). 
+    * Diversity(*Theoretical Analysis: Appendix.A.1.2*): The modeling of short-term user-item interactions is based on GNN, which helps to model higher-order connectivity[1]. However, the multilayer GNN architecture introduces over-smoothing problems. The theoretical analysis part points out that the cl loss gives a larger gradient to the difficult negative samples(*A.1.2.Eq.21*), which means push away similar user representations, i.e., mitigating the over-smoothing problem. our experiments(*Sec.4.4 and A.9.3*) also corroborate with the theoretical analysis. That is, a small temperature coefficient does give a larger gradient, but too large may lead to a gradient explosion.
 
-* Each module of our model is designed for scenario-specific data; they are not simple applications of the milestone model. We did many substitution experiments during the design process and used the version that made the best results in the end. In addition, we performed theoretical support
-<font size="1" color=red>(e.g.,TODO: contrast learning for multi-view mutual information maximization and increased instance differentiation by increasing the gradient.)</font> for some modules and obtained experimental results that echoed the theory(<font size="1" color=red>(TODO:.)</font>).
+* Graph Neural Network. Our proposed multi-behavior graph neural network has the following advantages as a short-term multi-behavior encoder.
+    * The main point is that GNN is divided into time slots(Sec.3.1.1), and there is a part that passes information between time slots. And our self-attention is specifically used to model the multi-relationship between time slots(Sec.3.2).
+    * GNN's initialization module(*Sec.3.1.3*) takes over the information from the previous time-slot.
+    * Encodes heterogeneity for multi-behavior.
+    * Encodes the information of short-term.
 
-* Allow us to present the advantages of our modules over the milestone model:
-    * Transformer：
-        * We do not use transformer in the model, but we introduce self-attention to model the relationship of multiple behaviors between time slot t and t-1. 
-        * Probably because the writing confused the reviewer, we have rewritten this part of the article<font size="1" color=red>(TODO:.)</font>. Specifically, we simplified the formula and used easy-follow notation. 
-        * To illustrate that our self-attention is used to model the relationship between each user's behavior rather than the tranfomer component, we have added the process of tensor dimension transformation table<font size="1" color=red>(TODO:.)</font> and expanded the description<font size="1" color=red>(TODO:.)</font> of the self-attention weight visualization experiment to the supplementary material.
-    * Contrastive：
-        * Our contrastive module models the commonality and diversity of user preference. And we provide theoretical support<font size="1" color=red>(TODO:.)</font> and experimental validation<font size="1" color=red>(TODO:.)</font> for "commonality" and "diversity" respectively. What's more, it is worth noting that, some experimental results with parameters not in the reasonable range are the extreme cases of the theoretical analysis.
-        * Commonality: We believe that there are user common preferences among multiple behaviors. By performing mutual information maximization across behaviors, more accurate and robust user representations can be obtained. The theoretical analysis section also states that minimizing our multibehavioral cl loss is approximately a lower bound for maximizing multibehavioral mutual information. In addition, the theoretical analysis section provides us with a theoretical analysis for multi-view contrastive learning.
-        * Diversity: The modeling of short-term user-item interactions is based on GNN, which helps to model higher-order connectivity[]. However, the multilayer GNN architecture introduces over-smoothing problems[]. The theoretical analysis part points out that the cl loss gives a larger gradient to the difficult negative samples, which means push away similar user representations, i.e., mitigating the over-soomthing problem. And, very interestingly, our experiments also corroborate with the theoretical analysis. That is, a small temperature coefficient does give a larger gradient, but too large may lead to a gradient explosion. We publish the code, data set, and parameters of the model (e.g., a Tmall temperature coefficient of 0.037 is optimal, but a loss of "NaN" occurs at 0.02 because of gradient explosion).
-    * GNN: Our GNN has the following advantages as a short-term multi-behavior encoder.
-        * The main point is that GNN is divided into time slots, and there is a part that passes information between time slots. And our self-attention is specifically used to model the multi-relationship between time slots.
-        * GNN's initialization module 3.1.5 takes over the information from the previous time-slot.
-        * Encodes heterogeneity for multi-behavior.
-        * Encodes the information of short-term.
+	
+> [1]Wang X, He X, Wang M, et al. Neural graph collaborative filtering[C]//Proceedings of the 42nd international ACM SIGIR conference on Research and development in Information Retrieval. 2019: 165-174.
 
-> **Point2** typos: "some typos... On page 2..."
+## Point2: Typo Fixing
 
-Thanks again to reviewer for pointing out the typpos in our article. We directly fixed the syntax error and rewrote the part<font size="1" color=red>(TODO:.)</font> of the method that was more problematic as pointed out by the review.
+**Response**: Thanks to reviewer for pointing out the typos in our paper. We have fixed the syntax error in our revision(*Sec.3.4*). We also proofread our paper to eliminate identified typos.
 
 
 
