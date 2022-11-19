@@ -77,7 +77,7 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 > **Point3**: The ablation studies ... extremely limited, ... to justify the design decisions ... without ... test the model's ability to ... tautologically explain the observed performance improvements ... lack of rigorous experimental design to validate ... provides a solid foundation...
 
 
-## Response to the ablation, weights and embedding visualization and parameter experiments to verify the validity of specific modules.
+## ## Point3: Details and Description of Sec.4.4 and Experiments.
 
 * Ablation experiments and EGCM modules：
     * Ablation experiments can demonstrate the effectiveness of the main modules of our model：
