@@ -102,7 +102,7 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 |  H@10  |       0.4625       |       0.5469       |       0.5338       |      0.3696      |   |       0.3546       |       0.4171       |       0.4634       |      0.3046      |   |    0.7323    |    0.7109    |      0.6768      |
 | N@10 |       0.2641       |       0.3265       |       0.3186       |      0.2295      |   |       0.1973       |       0.2341       |       0.2693       |      0.1773      |   |    0.4456    |    0.4412    |      0.4108      |
 
-
+* We appreciate the reviewers' thorough analysis. We have taken the insightful criticism and have rewritten(*Sec.4.4*) this module after reading the reviewers' remarks on the "in-depth examination of EGCM model" part. This, in our opinion, is a fascinating section of the article. It shows some visualization(self-attention weights, behavior-specific embedding, influence of $\tau$) results and combines the results with the theoretical analysis in the supplementary material(*Appendix.A.1*).
 
 > [1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
 
