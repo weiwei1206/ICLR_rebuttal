@@ -90,7 +90,7 @@ We want to start by expressing our gratitude to the reviewers for spending the t
     * We visualized the learned self-attention weight matrices $\Phi$ in Eq.4. Each weight matrix $\phi_{b,b'} \in \mathbb{R}^{|\mathcal{B}| \times |\mathcal{B}|}$ in $\Phi$ represents the relationship between the behaviors of a user. For example, for the Tmall dataset there are four behaviors *PageView, Favorite, Cart, Purchase*, therefore, $\phi \in \mathbb{R}^{4 \times 4}$, And, from the visualization results, it can be seen that the higher the number of interactions, the higher the weight of the behavior.
     * The results of the experiment can show that our dynamic cross-relational memory network learns the semantic content of the data.
 * Embedding visualization and EGCM modules：
-    * We have added the details of this module(Appendix.A.9.1) of the supplementary material. The following is a brief description of this experiment.
+    * We have added the details of this module(*Appendix.A.9.1*) of the supplementary material. The following is a brief description of this experiment.
     * Visualizing behavior-specific embeddings in Fig.4 aims to show the influence of mutual information maximization on representation. Technically, we utilize t-SNE initialized with PCA[1]. And the experiment are conducted on datasets(Tmall, IJCAI) contain four types of behaviors(*page view/click, favorite, cart, purchase*). We can observe that the behaviors of EGCM are closer. In other words, for user $u$, embedding of other behaviors with the same index become closer, while users with different indexes $u\neq u'$ are pulled away.
 
 * Ablation Experiments of User Behavior: 
