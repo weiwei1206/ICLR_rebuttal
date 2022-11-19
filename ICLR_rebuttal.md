@@ -45,13 +45,15 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
 
 
 
-
-
 # Reviewer2:
 
-> **Point1**: The constituent... are known and there is limited ... novelty.
 
-(For more information on this issue, please see the above "**Reply on the differences between the model module and previous work**.")
+We want to start by expressing our gratitude to the reviewers for spending the time to read the paper thoroughly and point out the problems. We provide the explanations below in answer to several points.
+
+## Point1: Statement of the Innovation and Motivation of EGCM
+
+**Response**: (We have included the key responses to the EGCM in reviewer1's response "Statement of the Innovation and Motivation of EGCM". We would be grateful if you would take the time to review it, and we would be pleased if we could relieve some of your worries regarding EGCM.)
+
 
 
 > **Point2**: Many of ... seem arbitrary ... not adequately justied. Over three pages ... loose intuitive motivation without actually justifying ... 
