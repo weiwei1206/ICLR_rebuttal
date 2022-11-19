@@ -24,7 +24,7 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
     * Diversity(*Theoretical Analysis: Appendix.A.1.2*): The modeling of short-term user-item interactions is based on GNN, which helps to model higher-order connectivity[1]. However, the multilayer GNN architecture introduces over-smoothing problems. The theoretical analysis part points out that the cl loss gives a larger gradient to the difficult negative samples(*A.1.2.Eq.21*), which means push away similar user representations, i.e., mitigating the over-smoothing problem. our experiments(*Sec.4.4 and A.9.3*) also corroborate with the theoretical analysis. That is, a small temperature coefficient does give a larger gradient, but too large may lead to a gradient explosion.
 
 * Graph Neural Network. Our proposed multi-behavior graph neural network has the following advantages as a short-term multi-behavior encoder.
-    * The main point is that GNN is divided into time slots(Sec.3.1.1), and there is a part that passes information between time slots. And our self-attention is specifically used to model the multi-relationship between time slots(Sec.3.2).
+    * The main point is that GNN is divided into time slots(*Sec.3.1.1*), and there is a part that passes information between time slots. And our self-attention is specifically used to model the multi-relationship between time slots(*Sec.3.2*).
     * GNN's initialization module(*Sec.3.1.3*) takes over the information from the previous time-slot.
     * Encodes heterogeneity for multi-behavior.
     * Encodes the information of short-term.
@@ -35,6 +35,7 @@ Each module of our EGCM framework is specially designed to tackle the unique cha
 ## Point2: Typo Fixing
 
 **Response**: Thanks to reviewer for pointing out the typos in our paper. We have fixed the syntax error in our revision(*Sec.3.4*). We also proofread our paper to eliminate identified typos.
+
 
 
 
