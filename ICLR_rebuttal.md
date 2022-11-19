@@ -140,6 +140,11 @@ It should be highlighted that we are incredibly appreciative to the reviewers fo
 * First of all, we would like to thank the reviewer for giving us valuable comments. We have carefully considered our shortcomings pointed out by the reviewer and thought that there must be some possible writing problems, so we have revised the method part. We also put some contents that affect the readers' reading in the supplementary materials<font size="1" color=red>(TODO:.)</font>.
 
 
+## Point: Modifications Made to the Article's "method" Section
+
+**Response**: We spent a lot of effort organizing and updating the "methods" part in response to the second and third comments highlighted by the reviewer in the "Weaknesses" section. We believed that these issues were related to the poor writing in that section.
+
+
 
 
 
