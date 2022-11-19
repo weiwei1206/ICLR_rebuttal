@@ -103,7 +103,7 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 
 
-[1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
+> [1]	Dunteman G H. Principal components analysis[M]. Sage, 1989.
 
 
 
