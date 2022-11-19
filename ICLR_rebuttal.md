@@ -56,13 +56,22 @@ We want to start by expressing our gratitude to the reviewers for spending the t
 
 
 
-> **Point2**: Many of ... seem arbitrary ... not adequately justied. Over three pages ... loose intuitive motivation without actually justifying ... 
 
-* Each of our modules is actually obtained through experimental attempts. Each module has been carefully designed and tested several times before being retained in the model framework. For example:
-    * The modeling of the user and item representations in Equations 1 and 5 is itself in our ablation experiment w/o-MGB.
-    * The normalization of the adjacency matrix in Equation 2 is different from the version mentioned in the GCN paper (the normalized Laplacian of GCN is symmetric) and is adapted to the user-item bipartite graph, which is a better choice for experimental results.
-    * The Initialization of time information transfer in Equation 6 is also the result of several versions of the experiment. Alternative versions are concatenate, sum, mean.
-    * Equations 7, 8, 9, and 10 all refer to the self-attention module in order to model multiple behavioral relationships across time-slots. The information of multiple time-slots itself can be replaced by RNN(eg.,GRU), and we likewise illustrate its effectiveness with ablation experiments.
+## Point2: Model Design and Detailing Decisions
+
+**Response**: Experimental efforts determine each module of EGCM. Before being incorporated into the model architecture, every module has undergone meticulous design and testing. For example:
+* The representation learning for user and item in Eq.1, 2 can be verified using ablation experiments w/o-MBG to verify the effect.
+* The normalization of the adjacency matrix in Equation 2 is different from the version mentioned in the GCN paper[1] (the normalized Laplacian of GCN is symmetric) and is adapted to the user-item bipartite graph, which is a better choice for experimental results(*Details are placed in Appendix.A.5*).
+* The initialization of time information transfer in Eq.3 is also the result of several versions of the experiment. Alternative versions are concatenate, sum, mean or without the combine.
+* Eq.4,5 refer to the dynamic cross-relational memory network(Sec.3.2) to model multiple behavioral relationships across time-slots. The messaging across time slots can be replaced by GRU, i.e. ablation experiments r/w-GRU(Sec.4.3). The results prove the effectiveness of the module we designed.
+* The attention in Eq.5 is still the result after trying sum, mean, concatenate+transformation.
+* InfoNCE[2] in Eq.7 is still the result after multiple attempts, and the denominator in which negative samples are added to the anchor point of their own view will have better characterization results.
+* InfoNCE[2] in Eq.7 is still the result after multiple attempts. In the denominator, the second term $exp({s( \textbf{e}_{u}^{b}, \textbf{e}_{u'}^{b})/\tau})$ in $\sum$ is because of the better results after adding the negative samples which are in the same view of the anchor node.
+
+> [1]Kipf T N, Welling M. Semi-supervised classification with graph convolutional networks[J]. arXiv preprint arXiv:1609.02907, 2016.
+> [2]Oord A, Li Y, Vinyals O. Representation learning with contrastive predictive coding[J]. arXiv preprint arXiv:1807.03748, 2018.
+
+
     
 
 > **Point3**: The ablation studies ... extremely limited, ... to justify the design decisions ... without ... test the model's ability to ... tautologically explain the observed performance improvements ... lack of rigorous experimental design to validate ... provides a solid foundation...
