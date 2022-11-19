@@ -75,7 +75,7 @@ We want to start by expressing our gratitude to the reviewers for spending the t
     
 ## Point3: Details and Description of Sec.4.4 and Experiments.
 
-**Response**: For the modules designed in the EGCM framework, in addition to the main experiments(*Tab.2*) that can illustrate the overall results, the ablation experiments(*Tab.3*), parameter experiment(*Fig.2(e)*), the visualization experiments of weights(*Fig.2(f)*) and embedding(*Fig.2(a)-(d)*) can verify the validity of the corresponding modules. Moreover, we add experiments on ablation behavior(Appendix.A.8) to illustrate the contribution of behavioral information to the results. In the following, we describe each module in detail.
+**Response**: For the modules designed in the EGCM framework, in addition to the main experiments(*Tab.2*) that can illustrate the overall results, the ablation experiments(*Tab.3*), parameter experiment(*Fig.2(e)*), the visualization experiments of weights(*Fig.2(f)*) and embedding(*Fig.2(a)-(d)*) can verify the validity of the corresponding modules. Moreover, we add experiments on ablation behavior(Appendix.A.8) to illustrate the contribution of behavioral information to the results. In the following, we describe each module in detail. (We released the codes and the reviewer may not have noticed it before.)
 
 
 * Ablation experiments and EGCM modules：
